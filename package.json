@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-thtotinstudio",
-  "version": "1.0.5",
+  "version": "1.0.0",
   "description": "Styleguide javascript de Throrinstudio",
   "main": "index.js",
   "keywords": [
@@ -10,9 +10,21 @@
   "author": "Benjamin Besse",
   "license": "MIT",
   "dependencies": {
-    "babel-eslint": "7.1.1",
-    "eslint-plugin-html": "2.0.1",
-    "eslint-plugin-import": "2.2.0",
-    "eslint-plugin-vue": "2.0.1"
-  }
+    "babel-eslint": "7.2.3",
+    "eslint-plugin-html": "3.2.0",
+    "eslint-plugin-import": "2.7.0",
+    "eslint-plugin-vue": "2.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/throrin19/eslint-config-throrinstudio.git"
+  },
+  "bugs": {
+    "url": "https://github.com/throrin19/eslint-config-throrinstudio/issues"
+  },
+  "homepage": "https://github.com/throrin19/eslint-config-throrinstudio#readme"
 }
