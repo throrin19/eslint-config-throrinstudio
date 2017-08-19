@@ -1,0 +1,25 @@
+{
+  "name": "@goomeo/eslint-config-goomeo",
+  "version": "1.0.5",
+  "description": "Styleguide javascript de Goomeo utilisé autant pour le front v6 que le back v6 et à niveau avec es6",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitgoomeo.cloudapp.net:npm/eslint-config-goomeo.git"
+  },
+  "keywords": [
+    "eslint",
+    "styleguide"
+  ],
+  "author": "Goomeo",
+  "license": "ISC",
+  "dependencies": {
+    "babel-eslint": "7.1.1",
+    "eslint-plugin-html": "2.0.1",
+    "eslint-plugin-import": "2.2.0",
+    "eslint-plugin-vue": "2.0.1"
+  }
+}
