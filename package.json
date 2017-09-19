@@ -10,8 +10,8 @@
   "author": "Benjamin Besse",
   "license": "MIT",
   "dependencies": {
-    "babel-eslint": "7.2.3",
-    "eslint-plugin-html": "3.2.0",
+    "babel-eslint": "8.0.0",
+    "eslint-plugin-html": "3.2.2",
     "eslint-plugin-import": "2.7.0",
     "eslint-plugin-vue": "2.1.0"
   },
