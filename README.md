@@ -40,7 +40,8 @@
 ## Installation
 
 ```bash
-npm install --save-dev eslint eslint-config-throrinstudio
+npm install --save-dev eslint babel-eslint eslint-plugin-html eslint-plugin-import eslint-plugin-vue eslint-config-throrinstudio
+    
 # or
 yarn add -D eslint-config-throrinstudio
 ```
