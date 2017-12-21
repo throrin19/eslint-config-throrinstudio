@@ -8,6 +8,7 @@ module.exports = {
     plugins : [
         "html",
         "import",
+        "vue",
     ],
     extends : [ 
         'plugin:vue/essential',
