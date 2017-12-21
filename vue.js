@@ -11,7 +11,6 @@ module.exports = {
         "vue",
     ],
     extends : [ 
-        'plugin:vue/essential',
         ...base.extends,
     ],
     root : true,
