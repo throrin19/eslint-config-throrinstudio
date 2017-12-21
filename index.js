@@ -22,9 +22,9 @@ module.exports = {
         node     : true,
         mocha    : true,
         mongo    : true,
-        browser  : true
+        browser  : true,
     },
     plugins : [
-        'import'
-    ]
+        'import',
+    ],
 };
