@@ -41,10 +41,10 @@
 ## Installation
 
 ```bash
-npm install -DE eslint babel-eslint eslint-plugin-html eslint-plugin-import vue-eslint-parser eslint-plugin-vue eslint-config-throrinstudio
+npm install -DE eslint babel-eslint eslint-plugin-import vue-eslint-parser eslint-plugin-vue eslint-config-throrinstudio
     
 # or
-yarn add -D eslint babel-eslint eslint-plugin-html eslint-plugin-import vue-eslint-parser eslint-plugin-vue eslint-config-throrinstudio
+yarn add -D eslint babel-eslint eslint-plugin-import vue-eslint-parser eslint-plugin-vue eslint-config-throrinstudio
 ```
 
 ## Utilisation
