@@ -3,6 +3,7 @@ const base = require('./index');
 module.exports = {
     parser  : "vue-eslint-parser",
     parserOptions : {
+        "parser": "babel-eslint",
         "sourceType": "module",
         "ecmaVersion": 2017,
         "ecmaFeatures": {
