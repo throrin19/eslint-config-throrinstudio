@@ -32,6 +32,7 @@
 - [Accessors](#accessors)   
 - [Events](#events)   
 - [jQuery](#jquery)   
+- [VueJS](#vuejs)
 - [Performance](#performance)   
 - [Resources](#resources)   
 
@@ -40,7 +41,7 @@
 ## Installation
 
 ```bash
-npm install --save-dev eslint babel-eslint eslint-plugin-html eslint-plugin-import eslint-plugin-vue eslint-config-throrinstudio
+npm install -DE eslint babel-eslint eslint-plugin-html eslint-plugin-import eslint-multiple-parsers vue-eslint-parser eslint-plugin-vue eslint-config-throrinstudio
     
 # or
 yarn add -D eslint-config-throrinstudio
@@ -2683,6 +2684,10 @@ Ne vous en faites pas, ce module les installe pour vous.
 ## jQuery
 
 - **Ne plus jamais utiliser jQuery dans vos projets ni de library externes l'utilisant**. Pour le front, les nouveaux frameworks font le job sans nécessairement inclure jQuery. De plus, lors de la compilation, vous risquez d'avoir des library qui ont jQuery dans différentes versions et cela peut entraîner des erreurs d'exécution car la compilation retournera différentes occurences de jQuery.
+
+## VueJS
+
+- Utilisation des règles de `plugin:vue/recommended` : [*Voir les règles*](https://github.com/vuejs/eslint-plugin-vue#priority-c-recommended-minimizing-arbitrary-choices-and-cognitive-overhead)
 
 ## Performance
 

@@ -1,17 +1,36 @@
 const base = require('./index');
 
 module.exports = {
-    parser  : "babel-eslint",
+    parser  : "eslint-multiple-parsers",
     parserOptions : {
-        sourceType : "module",
+        "parsers": [
+            {
+                "test": ".*\\.js$",
+                "path": "babel-eslint",
+                "options": {
+                    "sourceType": "module",
+                },
+            },
+            {
+                "test": ".*\\.vue$",
+                "path": "vue-eslint-parser",
+                "options": {
+                    "sourceType": "module",
+                    "ecmaVersion": 2017,
+                    "ecmaFeatures": {
+                        "jsx": false,
+                    },
+                },
+            },
+        ],
     },
     plugins : [
         "html",
         "import",
-        "vue",
     ],
     extends : [ 
         ...base.extends,
+        'plugin:vue/recommended'
     ],
     root : true,
     env  : {
