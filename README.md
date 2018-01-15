@@ -2707,17 +2707,6 @@ Ne vous en faites pas, ce module les installe pour vous.
     </template>
     ```
 
--  Surcharge de la rules `vue/html-indent`. Les attributs ne doivent pas être alignés verticalement sur le premier attribut dans le cas de plusieurs lignes.
-
-    ```vue
-    // good
-    <div id=""
-        class=""
-        some-attr=""
-    />
-    ```
-
-
 ## Performance
 
 - [On Layout & Web Performance](https://www.kellegous.com/j/2013/01/26/layout-performance/)
