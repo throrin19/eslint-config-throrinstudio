@@ -11,7 +11,6 @@ module.exports = {
         },
     },
     plugins : [
-        "html",
         "import",
     ],
     extends : [ 
