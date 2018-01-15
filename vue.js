@@ -16,7 +16,7 @@ module.exports = {
     extends : [ 
         ...base.extends,
         'plugin:vue/recommended',
-        './rules/vue/html-indent'
+        './rules/vue/html-indent.js'
     ],
     root : true,
     env  : {
