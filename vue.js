@@ -1,22 +1,29 @@
 const base = require('./index');
 
 module.exports = {
-    parser  : "babel-eslint",
+    parser  : "vue-eslint-parser",
     parserOptions : {
-        sourceType : "module"
+        "parser": "babel-eslint",
+        "sourceType": "module",
+        "ecmaVersion": 2017,
+        "ecmaFeatures": {
+            "jsx": false,
+        },
     },
     plugins : [
-        "html",
-        "vue",
-        "import"
+        "import",
     ],
-    extends : base.extends,
+    extends : [ 
+        ...base.extends,
+        'plugin:vue/recommended',
+        './rules/vue/html-indent.js'
+    ],
     root : true,
     env  : {
         es6      : true,
         commonjs : true,
         node     : true,
         mocha    : true,
-        browser  : true
-    }
+        browser  : true,
+    },
 };
