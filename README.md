@@ -2687,7 +2687,36 @@ Ne vous en faites pas, ce module les installe pour vous.
 
 ## VueJS
 
-- Utilisation des règles de `plugin:vue/recommended` : [*Voir les règles*](https://github.com/vuejs/eslint-plugin-vue#priority-c-recommended-minimizing-arbitrary-choices-and-cognitive-overhead)
+- Utilisation des règles de `plugin:vue/recommended` : [*Voir les règles*](https://github.com/vuejs/eslint-plugin-vue#priority-c-recommended-minimizing-arbitrary-choices-and-cognitive-overhead) mais avec des changements minimes :
+
+- Surcharge de la rules `vue/html-indent`. L'espacement dans le tag `template` est de 4 espaces :
+
+    ```vue
+    // bad
+    <template>
+      <div class="item">
+        <span>Contenu du span</span>
+      </div>
+    </template>
+
+    // good
+    <template>
+        <div class="item">
+            <span>Contenu du span</span>
+        </div>
+    </template>
+    ```
+
+-  Surcharge de la rules `vue/html-indent`. Les attributs ne doivent pas être alignés verticalement sur le premier attribut dans le cas de plusieurs lignes.
+
+    ```vue
+    // good
+    <div id=""
+        class=""
+        some-attr=""
+    />
+    ```
+
 
 ## Performance
 
