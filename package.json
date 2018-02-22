@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-throrinstudio",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Styleguide javascript de Throrinstudio",
   "main": "index.js",
   "keywords": [

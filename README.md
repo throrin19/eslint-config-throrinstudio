@@ -40,6 +40,17 @@
 
 ## Installation
 
+### Backend
+
+```bash
+npm install -DE eslint eslint-plugin-import eslint-config-throrinstudio
+    
+# or
+yarn add -D eslint eslint-plugin-import eslint-config-throrinstudio
+```
+
+### FrontEnd with Vue 
+
 ```bash
 npm install -DE eslint babel-eslint eslint-plugin-import vue-eslint-parser eslint-plugin-vue eslint-config-throrinstudio
     
@@ -224,7 +235,7 @@ Ne vous en faites pas, ce module les installe pour vous.
     };
     ```
 
-- Groupes toutes vos propriétés raccourcies au début de votre objet :
+- Groupes toutes vos propriétés raccourcies à la fin de votre objet :
 
     > Cela permet de savoir facilement quelles propriétés sont des propriétés raccourcies.
 
@@ -244,12 +255,12 @@ Ne vous en faites pas, ce module les installe pour vous.
 
     // good
     const obj = {
-        lukeSkywalker,
-        anakinSkywalker,
         episodeOne              : 1,
         twoJediWalkIntoACantina : 2,
         episodeThree            : 3,
         mayTheFourth            : 4,
+        lukeSkywalker,
+        anakinSkywalker,
     };
     ```
 
@@ -1170,7 +1181,7 @@ Ne vous en faites pas, ce module les installe pour vous.
 
 - Interdire la syntaxe de Webpack dans les `import`. eslint: [`import/no-webpack-loader-syntax`](https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md)
 
-    > Si vous utilisez la syntaxe de Webpack dans l'import, vous couplez fortement votre code à ce builder. Il est lutôt conseillé de mettre en place les différents loaders dans `webpack.config.js`.
+    > Si vous utilisez la syntaxe de Webpack dans l'import, vous couplez fortement votre code à ce builder. Il est plutôt conseillé de mettre en place les différents loaders dans `webpack.config.js`.
 
     ```javascript
     // bad
