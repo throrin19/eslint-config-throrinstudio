@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-throrinstudio",
-  "version": "1.2.2",
+  "version": "1.3.0",
   "description": "Styleguide javascript de Throrinstudio",
   "main": "index.js",
   "keywords": [
@@ -10,10 +10,10 @@
   "author": "Benjamin Besse",
   "license": "MIT",
   "peerDependencies": {
-    "vue-eslint-parser": "2.0.2",
-    "babel-eslint": "8.2.1",
-    "eslint-plugin-import": "2.8.0",
-    "eslint-plugin-vue": "4.2.0"
+    "vue-eslint-parser": "*",
+    "babel-eslint": "*",
+    "eslint-plugin-import": "*",
+    "eslint-plugin-vue": "*"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
