@@ -3,9 +3,9 @@ const base = require('./index');
 module.exports = {
     parser  : "vue-eslint-parser",
     parserOptions : {
-        // parser          : 'babel-eslint',
+        parser          : 'babel-eslint',
         sourceType      : 'module',
-        ecmaVersion     : 2018,
+        ecmaVersion     : 2017,
         ecmaFeatures    : {
             jsx                          : false,
             experimentalObjectRestSpread : true,
