@@ -18,6 +18,7 @@
 - [Classes et Constructeurs](#classes-et-constructeurs)   
 - [Modules (uniquement pour projets Front pour le moment)](#modules-uniquement-pour-projets-front-pour-le-moment)   
 - [Iterators et Generators](#iterators-et-generators)   
+- [Promesses](#promesses)
 - [Properties](#properties)   
 - [variables](#variables)   
 - [Hoisting](#hoisting)   
@@ -1296,6 +1297,40 @@ Ne vous en faites pas, ce module les installe pour vous.
     const foo = function* () {
         // ...
     };
+    ```
+
+## Promesses
+
+- Ne pas d'exécuteurs `async` pour les promesses. eslint [`no-async-promise-executor`](https://eslint.org/docs/rules/no-async-promise-executor)
+
+    ```javascript
+    // bad
+    const result = new Promise(async (resolve, reject) => {
+        readFile('foo.txt', function(err, result) {
+            if (err) {
+            reject(err);
+            } else {
+            resolve(result);
+            }
+        });
+    });
+
+    const result = new Promise(async (resolve, reject) => {
+        resolve(await foo);
+    });
+
+    // good
+    const result = new Promise((resolve, reject) => {
+        readFile('foo.txt', function(err, result) {
+            if (err) {
+            reject(err);
+            } else {
+            resolve(result);
+            }
+        });
+    });
+
+    const result = Promise.resolve(foo);
     ```
 
 ## Properties
