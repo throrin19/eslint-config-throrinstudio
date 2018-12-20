@@ -2718,7 +2718,7 @@ Ne vous en faites pas, ce module les installe pour vous.
     </template>
     ```
 
-- Surcharge de la rule `vue/component-name-in-template-casing`. Les composants dans le HTML appelés autrement qu'en kebabCase sont retournés en erreur
+- Surcharge de la rule `vue/component-name-in-template-casing`. Les composants dans le HTML appelés autrement qu'en kebabCase sont retournés en erreur.
 
     ```vue
     <template>
@@ -2730,6 +2730,26 @@ Ne vous en faites pas, ce module les installe pour vous.
         <theComponent />
         <Thecomponent />
         <The-component />
+    </template>
+    ```
+
+- Surcharge de la rule `vue/html-closing-bracket-newline`. Les sauts de ligne avant la fermeture des tags n'est pas autorisée.
+
+    ```vue
+    <template>
+        <!-- ✓ GOOD -->
+        <div id="foo" class="bar">
+        <div
+            id="foo"
+            class="bar">
+
+        <!-- ✗ BAD -->
+        <div id="foo" class="bar"
+        >
+        <div
+            id="foo"
+            class="bar"
+        >
     </template>
     ```
 

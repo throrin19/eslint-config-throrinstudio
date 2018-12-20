@@ -19,6 +19,7 @@ module.exports = {
         'plugin:vue/recommended',
         './rules/vue/html-indent.js',
         './rules/vue/component-name-in-template-casing.js',
+        './rules/vue/html-closing-bracket-newline.js',
     ],
     root : true,
     env  : {
