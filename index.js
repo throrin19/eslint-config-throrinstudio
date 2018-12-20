@@ -14,6 +14,8 @@ module.exports = {
         './rules/comments',
         './rules/whitespaces',
         './rules/comma',
+        './rules/promise',
+        './rules/async'
     ].map(require.resolve),
     root    : true,
     env : {
@@ -28,7 +30,7 @@ module.exports = {
         'import',
     ],
     parserOptions: {
-        ecmaVersion     : 2017,
+        ecmaVersion     : 2018,
         sourceType      : 'module',
         ecmaFeatures    : {
             experimentalObjectRestSpread : true,

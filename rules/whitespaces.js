@@ -61,5 +61,6 @@ module.exports = {
             align: "colon",
             mode: "minimum"
         }],
+        'rest-spread-spacing' : ["error"],
     }
 };

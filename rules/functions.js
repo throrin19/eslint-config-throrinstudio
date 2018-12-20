@@ -29,5 +29,13 @@ module.exports = {
         // suggest using the spread operator instead of .apply()
         // http://eslint.org/docs/rules/prefer-spread
         'prefer-spread': 'error',
+        // disallow unreachable code after return, throw, continue, and break statements
+        // https://eslint.org/docs/rules/no-unreachable
+        'no-unreachable': 'error',
+        // disallow assignment operators in conditional statements
+        // https://eslint.org/docs/rules/no-cond-assign
+        'no-cond-assign': 'error',
+        // Disallow return before else
+        'no-else-return' : 'error',
     }
 };
