@@ -5,5 +5,6 @@ module.exports = {
             multiline   : 'never',
         }],
         'vue/html-indent' : ["error", 4],
+        'vue/singleline-html-element-content-newline' : 'off',
     },
 };
