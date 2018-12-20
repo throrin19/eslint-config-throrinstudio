@@ -2718,6 +2718,21 @@ Ne vous en faites pas, ce module les installe pour vous.
     </template>
     ```
 
+- Surcharge de la rule `vue/component-name-in-template-casing`. Les composants dans le HTML appelés autrement qu'en kebabCase sont retournés en erreur
+
+    ```vue
+    <template>
+        <!-- ✓ GOOD -->
+        <the-component />
+
+        <!-- ✗ BAD -->
+        <TheComponent />
+        <theComponent />
+        <Thecomponent />
+        <The-component />
+    </template>
+    ```
+
 ## Performance
 
 - [On Layout & Web Performance](https://www.kellegous.com/j/2013/01/26/layout-performance/)
