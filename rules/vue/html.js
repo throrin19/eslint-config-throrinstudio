@@ -4,5 +4,6 @@ module.exports = {
             singleline  : 'never',
             multiline   : 'never',
         }],
+        'vue/html-indent' : ["error", 4],
     },
 };
