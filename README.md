@@ -18,6 +18,7 @@
 - [Classes et Constructeurs](#classes-et-constructeurs)   
 - [Modules (uniquement pour projets Front pour le moment)](#modules-uniquement-pour-projets-front-pour-le-moment)   
 - [Iterators et Generators](#iterators-et-generators)   
+- [Promesses](#promesses)
 - [Properties](#properties)   
 - [variables](#variables)   
 - [Hoisting](#hoisting)   
@@ -800,6 +801,60 @@ Ne vous en faites pas, ce module les installe pour vous.
     );
     ```
 
+- Il est interdit d'avoir du code après des `return`, `throw`, `continue`, et `break`. eslint : [`no-unreachable`](https://eslint.org/docs/rules/no-unreachable)
+
+    ```javascript
+    // bad
+    function foo() {
+        return true;
+        console.log("done");
+    }
+
+    function bar() {
+        throw new Error("Oops!");
+        console.log("done");
+    }
+
+    while(value) {
+        break;
+        console.log("done");
+    }
+
+    throw new Error("Oops!");
+    console.log("done");
+
+    function baz() {
+        if (Math.random() < 0.5) {
+            return;
+        } else {
+            throw new Error();
+        }
+        console.log("done");
+    }
+
+    for (;;) {}
+    console.log("done");
+
+    // good
+    function foo() {
+        return bar();
+        function bar() {
+            return 1;
+        }
+    }
+
+    function bar() {
+        return x;
+        var x;
+    }
+
+    switch (foo) {
+        case 1:
+            break;
+            var x;
+    }
+    ```
+
 ## Arrow Functions
 
 - Quand vous devez passer par une expression de fonctions (quand vous passez une fonction anonyme), utilisez la notation de fonctions fléchées. eslint: [`prefer-arrow-callback`](http://eslint.org/docs/rules/prefer-arrow-callback.html), [`arrow-spacing`](http://eslint.org/docs/rules/arrow-spacing.html)
@@ -1298,6 +1353,40 @@ Ne vous en faites pas, ce module les installe pour vous.
     };
     ```
 
+## Promesses
+
+- Ne pas d'exécuteurs `async` pour les promesses. eslint [`no-async-promise-executor`](https://eslint.org/docs/rules/no-async-promise-executor)
+
+    ```javascript
+    // bad
+    const result = new Promise(async (resolve, reject) => {
+        readFile('foo.txt', function(err, result) {
+            if (err) {
+            reject(err);
+            } else {
+            resolve(result);
+            }
+        });
+    });
+
+    const result = new Promise(async (resolve, reject) => {
+        resolve(await foo);
+    });
+
+    // good
+    const result = new Promise((resolve, reject) => {
+        readFile('foo.txt', function(err, result) {
+            if (err) {
+            reject(err);
+            } else {
+            resolve(result);
+            }
+        });
+    });
+
+    const result = Promise.resolve(foo);
+    ```
+
 ## Properties
 
 - Utiliser la notation par points pour accéder aux propriétés. eslint: [`dot-notation`](http://eslint.org/docs/rules/dot-notation.html)
@@ -1330,7 +1419,7 @@ Ne vous en faites pas, ce module les installe pour vous.
     const isJedi = getProp('jedi');
     ```
 
-## variables
+## Variables
 
 - Toujours utiliser `const` pour déclarer les variables. Si vous ne le faites pas, vous obtiendrez des variables globales. eslint: [`no-undef`](http://eslint.org/docs/rules/no-undef) [`prefer-const`](http://eslint.org/docs/rules/prefer-const)
 
@@ -1733,6 +1822,24 @@ Ne vous en faites pas, ce module les installe pour vous.
         thing2();
     } else {
         thing3();
+    }
+    ```
+
+- Ne réassignez pas de variables dans les blocks conditionnels. eslint : [`no-cond-assign`](https://eslint.org/docs/rules/no-cond-assign)
+
+    ```javascript
+    // bad
+    let x;
+    if (x = 0) {
+        let b = 1;
+    }
+
+    // Practical example that is similar to an error
+    function setHeight(someNode) {
+        "use strict";
+        do {
+            someNode.height = "100px";
+        } while (someNode = someNode.parentNode);
     }
     ```
 
@@ -2193,6 +2300,26 @@ Ne vous en faites pas, ce module les installe pour vous.
         lastname  : "Black",
         age       : 12
     };
+    ```
+
+- Ne mettez jamais d'espace lors de l'utilisation du spread/rest operator (`...`). eslint : [`rest-spread-spacing`](https://eslint.org/docs/rules/rest-spread-spacing)
+
+    ```javascript
+    // bad
+    fn(... args)
+    [... arr, 4, 5, 6]
+    let [a, b, ... arr] = [1, 2, 3, 4, 5];
+    function fn(... args) { console.log(args); }
+    let { x, y, ... z } = { x: 1, y: 2, a: 3, b: 4 };
+    let n = { x, y, ... z };
+
+    // good
+    fn(...args)
+    [...arr, 4, 5, 6]
+    let [a, b, ...arr] = [1, 2, 3, 4, 5];
+    function fn(...args) { console.log(args); }
+    let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
+    let n = { x, y, ...z };
     ```
 
 ## Virgules
@@ -2715,6 +2842,41 @@ Ne vous en faites pas, ce module les installe pour vous.
         <div class="item">
             <span>Contenu du span</span>
         </div>
+    </template>
+    ```
+
+- Surcharge de la rule `vue/component-name-in-template-casing`. Les composants dans le HTML appelés autrement qu'en kebabCase sont retournés en erreur.
+
+    ```vue
+    <template>
+        <!-- ✓ GOOD -->
+        <the-component />
+
+        <!-- ✗ BAD -->
+        <TheComponent />
+        <theComponent />
+        <Thecomponent />
+        <The-component />
+    </template>
+    ```
+
+- Surcharge de la rule `vue/html-closing-bracket-newline`. Les sauts de ligne avant la fermeture des tags n'est pas autorisée.
+
+    ```vue
+    <template>
+        <!-- ✓ GOOD -->
+        <div id="foo" class="bar">
+        <div
+            id="foo"
+            class="bar">
+
+        <!-- ✗ BAD -->
+        <div id="foo" class="bar"
+        >
+        <div
+            id="foo"
+            class="bar"
+        >
     </template>
     ```
 
