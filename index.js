@@ -1,4 +1,5 @@
 module.exports = {
+    plugins : ['import'],
     extends : [
         './rules/references',
         './rules/objects',
@@ -17,23 +18,13 @@ module.exports = {
         './rules/promise',
         './rules/async'
     ].map(require.resolve),
-    root    : true,
-    env : {
+    root : true,
+    env  : {
         es6      : true,
         commonjs : true,
         node     : true,
         mocha    : true,
         mongo    : true,
         browser  : true,
-    },
-    plugins : [
-        'import',
-    ],
-    parserOptions: {
-        ecmaVersion     : 2018,
-        sourceType      : 'module',
-        ecmaFeatures    : {
-            experimentalObjectRestSpread : true,
-        },
     },
 };
