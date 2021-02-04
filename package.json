@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-throrinstudio",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Styleguide javascript de Throrinstudio",
   "main": "index.js",
   "keywords": [
@@ -10,7 +10,6 @@
   "author": "Benjamin Besse",
   "license": "MIT",
   "peerDependencies": {
-    "vue-eslint-parser": "*",
     "babel-eslint": "*",
     "eslint-plugin-import": "*",
     "eslint-plugin-vue": "*"

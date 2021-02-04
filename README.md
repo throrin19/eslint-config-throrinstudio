@@ -67,15 +67,32 @@ Plusieurs choix s'ouvrent à vous en fonction du type de projet utilisé. Vous d
 
     ```json
     {
-        "extends" : "throrinstudio"
+        "extends" : "throrinstudio",
+        "parserOptions": {
+            "ecmaVersion"     : 2018,
+            "sourceType"      : "module",
+            "ecmaFeatures"    : {
+                "experimentalObjectRestSpread" : true
+            }
+        }
     }
     ```
 
-- Projets VueJS :
+- Projets VueJS (si build avec webpack et babel) :
 
     ```json
     {
-        "extends" : "throrinstudio/vue"
+        "extends" : "throrinstudio/vue",
+        "parser"  : "vue-eslint-parser",
+        "parserOptions" : {
+            "parser"          : "babel-eslint",
+            "sourceType"      : "module",
+            "ecmaVersion"     : 2020,
+            "ecmaFeatures"    : {
+                "jsx" : false,
+                "experimentalObjectRestSpread" : true
+            }
+        }
     }
     ```
 
