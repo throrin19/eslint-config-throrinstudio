@@ -1,5 +1,4 @@
 module.exports = {
-    plugins : ['import'],
     extends : [
         './rules/references',
         './rules/objects',
