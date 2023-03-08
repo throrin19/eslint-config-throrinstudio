@@ -1,10 +1,8 @@
 const base = require('./index');
 
 module.exports = {
-    plugins : ['import'],
     extends : [
         ...base.extends,
-        'plugin:vue/recommended',
         './rules/vue/html.js',
         './rules/vue/component.js',
     ],
